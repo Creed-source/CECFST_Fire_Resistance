@@ -1,5 +1,6 @@
 % CECFST heat transfer analysis + strength reduction calculation model
-% input
+
+% input parameters
 %Leff = 2.0; % exposed length, by Kodur (2011) and Lie TT (1990) et al.
 Leff = 3.22; % pin-pin effective length，by Richard Liew et al.(2012)
 L = 0.24; % concrete encasement dimension, in m
@@ -23,13 +24,13 @@ E_ci = 22 * (f_ci*10^(-7))^0.3*10^9;  % Calculate E based on EC2
 E_co = 22 * (f_co*10^(-7))^0.3*10^9;
 E_s = 214*10^9; % test measured value for steel
 
-% Thermal properties (C40 concrete)
+% Thermal properties 
 % heat conduction in W/m·K; lower limit
 h = 25; % convective coefficient，W/m^2·K
 epsilon = 0.7; % concrete emissivity
 sigma = 5.67e-8; % Stefan-Boltzmann constant
 
-% Set initial temp (S'pore ave temp)
+% Set initial temp (Singapore average temperature)
 T = 31 * ones(N); % initial temp Matrix in Celsius
 
 % Initialise data (create array to store values over time）
